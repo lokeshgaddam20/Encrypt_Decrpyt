@@ -39,7 +39,8 @@ def result():
     elif (i == 2):
         Output.set(decode(k, msg))
     else:
-        messagebox.showinfo('ProjectGurukul', 'Please Choose one of Encryption or Decrption. Try again.')
+        messagebox.showinfo(
+            'ProjectGurukul', 'Please Choose one of Encryption or Decrption. Try again.')
 
 
 # Function that executes on clicking Reset function
@@ -50,8 +51,10 @@ def reset():
     Output.set("")
 
 
-customtkinter.set_appearance_mode("System")  # Modes: system (default), light, dark
-customtkinter.set_default_color_theme("dark-blue")  # Themes: blue (default), dark-blue, green
+# Modes: system (default), light, dark
+customtkinter.set_appearance_mode("System")
+# Themes: blue (default), dark-blue, green
+customtkinter.set_default_color_theme("dark-blue")
 
 root = customtkinter.CTk()
 root.geometry("800x580")
@@ -67,18 +70,21 @@ l1 = customtkinter.CTkLabel(master=root, image=img1)
 l1.pack()
 
 # creating custom frame
-frame_bottom = customtkinter.CTkFrame(master=l1, width=420, height=480, corner_radius=15)
+frame_bottom = customtkinter.CTkFrame(
+    master=l1, width=420, height=480, corner_radius=15)
 frame_bottom.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 
 l2 = customtkinter.CTkLabel(master=frame_bottom, text="Welcome to \nEncryption and Decryption",
                             font=('Century Gothic', 20))
 l2.place(x=75, y=35)
-label2 = customtkinter.CTkLabel(master=frame_bottom, text="Enter the Message ", font=("'Century Gothic", 13))
+label2 = customtkinter.CTkLabel(
+    master=frame_bottom, text="Enter the Message ", font=("'Century Gothic", 13))
 label2.place(x=50, y=100)
 entry1 = customtkinter.CTkEntry(master=frame_bottom, width=340, textvariable=Message,
                                 placeholder_text='Enter the Message')
 entry1.place(x=50, y=130)
-label2 = customtkinter.CTkLabel(master=frame_bottom, text="Enter the key ", font=("Century Gothic", 13))
+label2 = customtkinter.CTkLabel(
+    master=frame_bottom, text="Enter the key ", font=("Century Gothic", 13))
 label2.place(x=50, y=165)
 entry2 = customtkinter.CTkEntry(master=frame_bottom, width=340, textvariable=key, placeholder_text='Enter the Key',
                                 show="*")
@@ -95,9 +101,11 @@ button1 = customtkinter.CTkButton(master=frame_bottom, width=340, height=40, tex
                                   corner_radius=25, font=("Century Gothic", 15, "bold"))
 button1.place(x=50, y=300)
 
-label3 = customtkinter.CTkLabel(master=frame_bottom, text="Result...", font=(" Axon ", 15))
+label3 = customtkinter.CTkLabel(
+    master=frame_bottom, text="Result...", font=(" Axon ", 15))
 label3.place(x=50, y=355)
-res = customtkinter.CTkEntry(master=frame_bottom, width=340, height=45, textvariable=Output, corner_radius=20, )
+res = customtkinter.CTkEntry(
+    master=frame_bottom, width=340, height=45, textvariable=Output, corner_radius=20, )
 res.place(x=50, y=385)
 
 root.mainloop()
