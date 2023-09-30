@@ -7,14 +7,14 @@ from PIL import ImageTk, Image
 
 
 # Encoding Function
-def encode(key, msg):
+def encoding(key, msg):
     enc = []
     for i in range(len(msg)):
         list_key = key[i % len(key)]
         list_enc = chr((ord(msg[i]) +
                         ord(list_key)) % 256)
         enc.append(list_enc)
-    return base64.urlsafe_b64encode("".join(enc).encode()).decode()
+    return base64.urlsafe_b64encode("".join(enc).encoding()).decode()
 
 
 # Decoding Function
@@ -35,7 +35,7 @@ def result():
     k = key.get()
     i = mode.get()
     if (i == 1):
-        Output.set(encode(k, msg))
+        Output.set(encoding(k, msg))
     elif (i == 2):
         Output.set(decode(k, msg))
     else:
